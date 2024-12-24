@@ -7,7 +7,7 @@ import { useUser } from "../GlobalState";
 const getMyReviews = async ({ userId }) => {
   try {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}api/v1/reviews/${userId}`
+      `https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/reviews/${userId}`
     );
     return response.data.data.data;
   } catch (error) {

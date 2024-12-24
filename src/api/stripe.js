@@ -13,9 +13,7 @@ export const bookTour = async (tourId) => {
     const token = localStorage.getItem("token");
     // 1) Get checkout session from API
     const session = await axios.get(
-      `${
-        import.meta.env.VITE_API_URL
-      }api/v1/bookings/checkout-session/${tourId}`,
+      `https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/bookings/checkout-session/${tourId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

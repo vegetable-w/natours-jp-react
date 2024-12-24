@@ -9,7 +9,8 @@ function Overview() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const API_URL = `${import.meta.env.VITE_API_URL}api/v1/tours`;
+    const API_URL =
+      "https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/tours";
 
     fetch(API_URL)
       .then((response) => {

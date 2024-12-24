@@ -55,7 +55,7 @@ function Tour() {
     const fetchTour = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}api/v1/tours/${tourId}`
+          `https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/tours/${tourId}`
         );
         if (!response.ok) throw new Error("Failed to fetch tour data.");
         const data = await response.json();

@@ -40,7 +40,7 @@ const CreateReviewForm = ({ tourId, onCloseModal }) => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}api/v1/tours/${tourId}/reviews`,
+        `https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/tours/${tourId}/reviews`,
         {
           rating,
           review,

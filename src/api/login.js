@@ -4,7 +4,7 @@ import axios from "axios";
 
 export const login = async ({ email, password }) => {
   const res = await axios.post(
-    `${import.meta.env.VITE_API_URL}api/v1/users/login`,
+    "https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/users/login",
     {
       email,
       password,
@@ -20,7 +20,7 @@ export const login = async ({ email, password }) => {
 
 export const logout = async () => {
   const res = await axios.get(
-    `${import.meta.env.VITE_API_URL}api/v1/users/logout`
+    "https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/users/logout"
   );
 
   if ((res.data.status = "success")) return;

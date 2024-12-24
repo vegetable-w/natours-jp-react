@@ -7,7 +7,7 @@ import TourCards from "../components/TourCards";
 const getMyTours = async ({ userId }) => {
   try {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}api/v1/bookings/${userId}`,
+      `https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/bookings/${userId}`,
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
