@@ -6,10 +6,10 @@ const stripePromise = loadStripe(
   "pk_test_51QHNzpArA5kbhfPaddjgXfjfOUlGJbiKnAIGsoaAZYS9kC0bcKZTvp3qHYsooTcnZAQSntOytKZ20dbdLqeurQbU004QpcQ5jS"
 );
 
-const stripe = await stripePromise;
-
 export const bookTour = async (tourId) => {
   try {
+    const stripe = await stripePromise;
+
     const token = localStorage.getItem("token");
     // 1) Get checkout session from API
     const session = await axios.get(
