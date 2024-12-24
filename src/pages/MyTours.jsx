@@ -3,6 +3,7 @@ import axios from "axios";
 import { useUser } from "../GlobalState";
 import Spinner from "../components/Spinner";
 import TourCards from "../components/TourCards";
+import Error from "./Error";
 
 const getMyTours = async ({ userId }) => {
   try {
@@ -16,7 +17,7 @@ const getMyTours = async ({ userId }) => {
     );
     return response.data.data.tours;
   } catch (error) {
-    console.error("Error fetching My Tours:", error);
+    console.log("Error: failed fetch my tours");
     throw error;
   }
 };
@@ -43,7 +44,7 @@ const MyTours = () => {
   }, []);
 
   if (loading) return <Spinner />;
-  if (error) return <p>{error}</p>;
+  if (error) return <Error msg={error} />;
 
   return <TourCards tours={tours} />;
 };

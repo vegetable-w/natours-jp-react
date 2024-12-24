@@ -64,7 +64,6 @@ const CreateReviewForm = ({ tourId, onCloseModal }) => {
         res?.response?.data?.message || "Review submission failed"
       );
     } catch (err) {
-      console.error("Error submitting review:", err.message);
       showAlert("error", `Error: ${err.message}`);
     }
   };
