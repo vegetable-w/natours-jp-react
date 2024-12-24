@@ -8,4 +8,10 @@ export default defineConfig({
   optimizeDeps: {
     include: ["@stripe/stripe-js"],
   },
+  build: {
+    outDir: "dist", // 确保与 Vercel 部署一致
+  },
+  server: {
+    historyApiFallback: true, // 支持本地开发中的客户端路由
+  },
 });
