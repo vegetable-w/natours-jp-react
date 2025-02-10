@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useUser } from "../GlobalState";
-import Spinner from "../components/Spinner";
-import TourReviewCards from "../components/TourReviewCards";
+
+import { useUser } from "../contexts/GlobalState";
+import Spinner from "../ui/Spinner";
+import TourReviewCards from "../components/review/TourReviewCards";
 import Error from "./Error";
 
 const getMyTours = async ({ userId }) => {
@@ -11,11 +12,11 @@ const getMyTours = async ({ userId }) => {
       `https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/bookings/${userId}`,
       {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // 添加认证头部
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       }
     );
-    return response.data.data.tours; // 返回 tours 数据
+    return response.data.data.tours;
   } catch (error) {
     console.error("Error fetching My Tours:", error);
     throw error;
@@ -46,7 +47,12 @@ const MyReviews = () => {
   if (loading) return <Spinner />;
   if (error) return <Error msg={error} />;
 
-  return <TourReviewCards tours={tours} />;
+  return (
+    <div className="user-view__form-container">
+      <h2 className="heading-secondary ma-bt-md">Your reviews</h2>
+      <TourReviewCards tours={tours} />
+    </div>
+  );
 };
 
 export default MyReviews;

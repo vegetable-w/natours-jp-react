@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useLogout } from "../hooks/useLogout";
 import { Link } from "react-router-dom";
 import SpinnerMini from "./SpinnerMini";
-import { useUser } from "../GlobalState";
+import { useUser } from "../contexts/GlobalState";
 
 const Header = () => {
   const { logout, isLoading } = useLogout();

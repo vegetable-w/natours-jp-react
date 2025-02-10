@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
-import AddReview from "./AddReview";
 import axios from "axios";
-import { useUser } from "../GlobalState";
+
+import AddReview from "./AddReview";
+import { useUser } from "../../contexts/GlobalState";
 
 const getMyReviews = async ({ userId }) => {
   try {
@@ -39,13 +40,7 @@ function TourCards({ tours }) {
 
   return (
     <>
-      <div className="review-prompt">
-        <h1>
-          Share your experience to help other travelers make informed decisions!
-        </h1>
-      </div>
-
-      <div className="card-container">
+      <div className="card-container-account">
         {tours.map((tour) => {
           let matchingReview = null;
           for (const review of reviews) {

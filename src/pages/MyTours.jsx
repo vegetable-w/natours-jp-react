@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useUser } from "../GlobalState";
-import Spinner from "../components/Spinner";
-import TourCards from "../components/TourCards";
+
+import { useUser } from "../contexts/GlobalState";
+import Spinner from "../ui/Spinner";
+import TourCards from "../components/tour/TourCards";
 import Error from "./Error";
 
 const getMyTours = async ({ userId }) => {
@@ -46,7 +47,14 @@ const MyTours = () => {
   if (loading) return <Spinner />;
   if (error) return <Error msg={error} />;
 
-  return <TourCards tours={tours} />;
+  return (
+    <div className="user-view__form-container">
+      <h2 className="heading-secondary ma-bt-md">Your tours</h2>
+      <div className="card-container-account">
+        <TourCards tours={tours} />
+      </div>
+    </div>
+  );
 };
 
 export default MyTours;

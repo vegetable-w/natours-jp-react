@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import CreateReviewForm from "./CreateReviewForm";
-import Modal from "./Modal";
+import Modal from "../../ui/Modal";
 
 const Button = styled.button`
   font-size: 1.6rem;
@@ -25,7 +25,7 @@ function AddReview({ tourId }) {
     <div>
       <Modal>
         <Modal.Open opens="review-form">
-          <Button>write a review</Button>
+          <Button>Share Your Thoughts</Button>
         </Modal.Open>
         <Modal.Window name="review-form">
           <CreateReviewForm tourId={tourId} />

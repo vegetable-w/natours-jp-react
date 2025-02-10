@@ -1,15 +1,19 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
+import Header from "./ui/Header";
+import Footer from "./ui/Footer";
+
 function AppLayout() {
   const location = useLocation();
-  const isOverviewPage = ["/", "/my-tours", "/my-reviews"].includes(
-    location.pathname
-  );
+  const isOverviewPage = [
+    "/",
+    "/my-tours",
+    "/my-reviews",
+    "/my-videos",
+  ].includes(location.pathname);
 
   return (
     <div>

@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { login as loginApi } from "../api/login";
 import { useNavigate } from "react-router-dom";
 import { showAlert } from "../api/alerts";
-import { useSetUser } from "../GlobalState";
+import { useSetUser } from "../contexts/GlobalState";
 
 export function useLogin() {
   const queryClient = useQueryClient();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
-import SpinnerMini from "../components/SpinnerMini";
+import SpinnerMini from "../ui/SpinnerMini";
 
 const Login = () => {
   const [email, setEmail] = useState("");

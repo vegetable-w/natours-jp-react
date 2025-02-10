@@ -2,12 +2,13 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import styled from "styled-components";
-import StarRating from "./StarRating";
 import axios from "axios";
-import { showAlert } from "../api/alerts";
-import Form from "../ui/Form";
-import FormRow from "../ui/FormRow";
-import Textarea from "../ui/Textarea";
+
+import StarRating from "../../ui/StarRating";
+import { showAlert } from "../../api/alerts";
+import Form from "../../ui/Form";
+import FormRow from "../../ui/FormRow";
+import Textarea from "../../ui/Textarea";
 
 const Button = styled.button`
   font-size: 1.4rem;

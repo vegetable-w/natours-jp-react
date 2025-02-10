@@ -1,14 +1,17 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
-import OverviewBox from "../components/OverviewBox";
-import ReviewCard from "../components/ReviewCard";
+import axios from "axios";
+
+import OverviewBox from "../ui/OverviewBox";
+import ReviewCard from "../components/review/ReviewCard";
 import { useParams } from "react-router-dom";
-import MapboxTest from "../components/MapboxTest";
-import Spinner from "../components/Spinner";
-import { useUser } from "../GlobalState";
+import MapboxTest from "../components/tour/MapboxTest";
+import Spinner from "../ui/Spinner";
+import { useUser } from "../contexts/GlobalState";
 import { bookTour } from "../api/stripe";
-import SpinnerMini from "../components/SpinnerMini";
+import SpinnerMini from "../ui/SpinnerMini";
 import Error from "./Error";
+import VideoCard from "../components/video/VideoCard";
 
 const BookTourButton = ({ user, tour }) => {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -46,6 +49,7 @@ const BookTourButton = ({ user, tour }) => {
 function Tour() {
   const { tourId } = useParams();
   const [tour, setTour] = useState(null);
+  const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -54,12 +58,10 @@ function Tour() {
   useEffect(() => {
     const fetchTour = async () => {
       try {
-        const response = await fetch(
+        const res = await axios.get(
           `https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/tours/${tourId}`
         );
-        if (!response.ok) throw new Error("Failed to fetch tour data.");
-        const data = await response.json();
-        setTour(data.data.data);
+        setTour(res.data.data.data);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -68,6 +70,21 @@ function Tour() {
     };
 
     fetchTour();
+  }, [tourId]);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const res = await axios.get(
+          `https://natours-japan-tours-18991a07f7f0.herokuapp.com/api/v1/videos/tour/${tourId}`
+        );
+        setVideos(res.data.data);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+
+    fetchVideos();
   }, [tourId]);
 
   if (loading) return <Spinner />;
@@ -191,6 +208,16 @@ function Tour() {
           ))}
         </div>
       </section>
+
+      {videos.length > 0 && (
+        <section className="section-videos">
+          <div className="reviews">
+            {videos.map((video) => (
+              <VideoCard video={video} key={video._id} />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="section-cta">
         <div className="cta">
