@@ -8,10 +8,21 @@
 
 ## 🚀 Features
 
-- **Browse Tours**: Explore a variety of guided tours across destinations in Japan.
-- **Booking System**: Allows users to book tours and manage their reservations.
-- **Review System**: Users can add reviews for tours they have purchased, providing feedback and enhancing user engagement.
-- **User Authentication**: Backend implementation for secure login and registration (front-end signup UI pending).
+### Frontend Features
+
+- **Tour Browsing**: Easily explore a wide range of guided tours across different destinations in Japan with a user-friendly interface.
+- **Booking Management**: Book tours and view your reservations from your account page.
+- **Review Submission**: Share your feedback by writing reviews for the tours you've experienced.
+- **User Authentication Interface**: Simple login page connected to secure backend authentication.
+- **Favorites Management**: Save tours to your favorites list.
+- **Video Upload**: Upload videos of your tour experiences, seamlessly integrated with backend services.
+
+### Backend-Integrated Features
+
+- **Secure Authentication**: Manages secure login through the backend service.
+- **Review Management**: Retrieves and displays user reviews from the backend.
+- **Video Management**: Allows users to upload and store videos, as well as fetch and display them from the backend.
+- **Real-Time Notifications** _(upcoming)_: UI for push notifications when the price of favorited tours changes (pending backend deployment).
 
 ---
 
@@ -21,9 +32,15 @@
 
 - **React**: For building the user interface.
 - **Vite**: For fast development and optimized builds.
+- **tus**: Used for video uploads.
 
 ### Backend
 
 - **Node.js**: Runtime environment.
 - **Express**: Backend framework.
 - **MongoDB & Mongoose**: Database and data modeling.
+- **tus**: Handles incoming video uploads from the frontend.
+- **Cloudinary**: Used for storing and managing uploaded videos.
+- **WebSocket**: Enables real-time communication between the server and clients.
+- **Redis**: Caching and message queue support for real-time data handling.
+- **RabbitMQ**: Message system for handling real-time notifications.
