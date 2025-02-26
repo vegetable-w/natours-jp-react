@@ -40,3 +40,4 @@
 - **MongoDB & Mongoose**: Database and data modeling.
 - **tus**: Handles incoming video uploads from the frontend.
 - **Cloudinary**: Used for storing and managing uploaded videos.
+- **Stripe**: Used for handling payment processing.
