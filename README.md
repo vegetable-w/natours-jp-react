@@ -22,7 +22,6 @@
 - **Secure Authentication**: Manages secure login through the backend service.
 - **Review Management**: Retrieves and displays user reviews from the backend.
 - **Video Management**: Allows users to upload and store videos, as well as fetch and display them from the backend.
-- **Real-Time Notifications** _(upcoming)_: UI for push notifications when the price of favorited tours changes (pending backend deployment).
 
 ---
 
@@ -41,6 +40,3 @@
 - **MongoDB & Mongoose**: Database and data modeling.
 - **tus**: Handles incoming video uploads from the frontend.
 - **Cloudinary**: Used for storing and managing uploaded videos.
-- **WebSocket**: Enables real-time communication between the server and clients.
-- **Redis**: Caching and message queue support for real-time data handling.
-- **RabbitMQ**: Message system for handling real-time notifications.
