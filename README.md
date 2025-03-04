@@ -1,43 +1,45 @@
-# Natours-jp (React-Vite Frontend)
+# Natours-jp (React-Vite フロントエンド)
 
-**Natours-jp** is a web application that allows users to browse and book guided tours across various destinations in Japan. This project features a reimplementation of the frontend using **React** and **Vite**, while utilizing the original backend API built with **Node.js**, **Express**, **Mongoose**, and **MongoDB**.
+**Natours-jp** は、日本各地のガイド付きツアーを閲覧・予約できる Web アプリケーションです。本プロジェクトでは、**React** と **Vite** を使用してフロントエンドを再実装し、バックエンドは **Node.js**、**Express**、**Mongoose**、**MongoDB** を用いたオリジナルの API を利用しています。
 
-🌐 **Live Demo**: [Natours-jp](https://natours-jp.vercel.app/)
-
----
-
-## 🚀 Features
-
-### Frontend Features
-
-- **Tour Browsing**: Easily explore a wide range of guided tours across different destinations in Japan with a user-friendly interface.
-- **Booking Management**: Book tours and view your reservations from your account page.
-- **Review Submission**: Share your feedback by writing reviews for the tours you've experienced.
-- **User Authentication Interface**: Simple login page connected to secure backend authentication.
-- **Favorites Management**: Save tours to your favorites list.
-- **Video Upload**: Upload videos of your tour experiences, seamlessly integrated with backend services.
-
-### Backend-Integrated Features
-
-- **Secure Authentication**: Manages secure login through the backend service.
-- **Review Management**: Retrieves and displays user reviews from the backend.
-- **Video Management**: Allows users to upload and store videos, as well as fetch and display them from the backend.
+🌐 **ライブデモ**: [Natours-jp](https://natours-jp.vercel.app/)
 
 ---
 
-## 🛠️ Technologies Used
+## 🚀 機能
 
-### Frontend
+### フロントエンド機能
 
-- **React**: For building the user interface.
-- **Vite**: For fast development and optimized builds.
-- **tus**: Used for video uploads.
+- **ツアー閲覧**: 日本各地の多彩なガイド付きツアーを、使いやすい UI で簡単に検索・閲覧できます。
+- **予約管理**: ユーザーアカウントからツアーの予約を確認できます。
+- **レビュー投稿**: 体験したツアーに関するレビューを投稿できます。
+- **ユーザー認証 UI**: セキュアなバックエンド認証と接続されたログインページを提供。
+- **お気に入り管理**: 気に入ったツアーをお気に入りリストに保存できます。
+- **動画アップロード**: ツアーの体験動画をアップロードし、バックエンドとシームレスに統合。
 
-### Backend
+### バックエンド統合機能
 
-- **Node.js**: Runtime environment.
-- **Express**: Backend framework.
-- **MongoDB & Mongoose**: Database and data modeling.
-- **tus**: Handles incoming video uploads from the frontend.
-- **Cloudinary**: Used for storing and managing uploaded videos.
-- **Stripe**: Used for handling payment processing.
+- **セキュアな認証**: バックエンドサービスを利用した安全なログイン管理。
+- **レビュー管理**: バックエンドから取得したレビューの表示。
+- **動画管理**: ユーザーが動画をアップロード・保存し、バックエンドから取得・表示可能。
+
+---
+
+## 🛠️ 使用技術
+
+### フロントエンド
+
+- **React**: UI 構築に使用。
+- **Vite**: 高速な開発環境と最適化ビルド。
+- **tus**: 動画アップロード処理に利用。
+
+### バックエンド
+
+- **Node.js**: 実行環境。
+- **Express**: バックエンドフレームワーク。
+- **MongoDB & Mongoose**: データベースおよびデータモデリング。
+- **tus**: 動画アップロードを処理。
+- **Cloudinary**: アップロードした動画の保存・管理。
+- **Stripe**: 決済処理。
+
+---
