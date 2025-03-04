@@ -1,6 +1,6 @@
 # Natours-jp (React-Vite フロントエンド)
 
-**Natours-jp** は、日本各地のガイド付きツアーを閲覧・予約できる Web アプリケーションです。本プロジェクトでは、**React** と **Vite** を使用してフロントエンドを再実装し、バックエンドは **Node.js**、**Express**、**Mongoose**、**MongoDB** を用いたオリジナルの API を利用しています。
+**Natours-jp** は、日本各地のガイド付きツアーを閲覧・予約できる Web アプリです。このアプリでは、**React** と **Vite** を使用してフロントエンドを再実装し、バックエンドは **Node.js**、**Express**、**Mongoose**、**MongoDB** を用いたオリジナルの API を利用しています。
 
 🌐 **ライブデモ**: [Natours-jp](https://natours-jp.vercel.app/)
 
